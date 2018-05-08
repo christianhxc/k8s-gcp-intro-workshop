@@ -2,7 +2,7 @@
 
 ## Prerequisites
 - Docker
-- GCP Account
+- [GCP Account](https://console.cloud.google.com/)
 
 ## Create Go Application (main.go)
 
@@ -58,7 +58,7 @@ CMD ["./hello-app"]
 
 ## Build Docker Image
 ```
-docker build -t christianhxc/hello-go:1.0
+docker build -t christianhxc/hello-go:1.0 .
 ```
 
 ## Run App Locally
@@ -110,6 +110,12 @@ kubectl get service hello-server
 
 ```
 http://[EXTERNAL_IP]:8080
+```
+
+## Scale Out
+
+```
+kubectl scale --replicas=3 deployment/hello-server
 ```
 
 ## Clean Up
